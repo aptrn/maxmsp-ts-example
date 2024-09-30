@@ -1,20 +1,20 @@
 {
-	"name": "not251_typescript",
-	"version": "1.0.0",
-	"description": "Not251 example device",
-	"scripts": {
-		"build": "tsc && node post-build.js",
-		"dev": "node watch.js"
-	},
-	"keywords": [
-		"maxmsp",
-		"max"
-	],
-	"author": "not251",
-	"license": "MIT",
-	"devDependencies": {
-		"@types/maxmsp": "^1.0.12",
-		"chokidar": "^4.0.1",
-		"typescript": "^5.6.2"
-	}
+  "name": "not251_typescript",
+  "version": "1.0.0",
+  "description": "Not251 example device",
+  "scripts": {
+    "build": "tsc && node post-build.js",
+    "dev": "node watch.js"
+  },
+  "keywords": [
+    "maxmsp",
+    "max"
+  ],
+  "author": "not251",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/maxmsp": "^1.0.12",
+    "chokidar": "^4.0.1",
+    "typescript": "^5.6.2"
+  }
 }
