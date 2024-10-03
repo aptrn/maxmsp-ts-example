@@ -1,8 +1,8 @@
 {
-	"name" : "not251-max-example",
+	"name" : "maxmsp-ts-example",
 	"version" : 1,
 	"creationdate" : 3810572918,
-	"modificationdate" : 3810574562,
+	"modificationdate" : 3810820491,
 	"viewrect" : [ 25.0, 107.0, 870.0, 1006.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
@@ -15,32 +15,10 @@
 				"local" : 1,
 				"toplevel" : 1
 			}
-,
-			"UI Module.maxpat" : 			{
-				"kind" : "patcher",
-				"local" : 1
-			}
 
 		}
 ,
 		"code" : 		{
-			"main.js" : 			{
-				"kind" : "javascript",
-				"local" : 1
-			}
-,
-			"not251_index.js" : 			{
-				"kind" : "javascript",
-				"local" : 1
-			}
-
-		}
-,
-		"other" : 		{
-			"not251_index.js.map" : 			{
-				"kind" : "file",
-				"local" : 1
-			}
 
 		}
 
