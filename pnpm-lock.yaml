@@ -7,11 +7,10 @@ settings:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
       '@aptrn/markovchain-ts':
         specifier: ^0.0.1
         version: 0.0.1
-    devDependencies:
       '@aptrn/maxmsp-ts':
         specifier: ^0.0.1
         version: 0.0.1

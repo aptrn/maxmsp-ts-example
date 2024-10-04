@@ -3,7 +3,16 @@
   "dependencies": {
     "@not251/not251": {
       "alias": "not251",
-      "files": ["index.js"],
+      "files": [
+        "index.js"
+      ],
+      "path": ""
+    },
+    "@aptrn/markovchain-ts": {
+      "alias": "mkc",
+      "files": [
+        "index.js"
+      ],
       "path": ""
     }
   }
