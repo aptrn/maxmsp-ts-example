@@ -1,62 +1,80 @@
-# Example project for Typescript in Max with NPM dependencies
+# Example Max Project with TypeScript and npm Dependencies
 
-This project is an example project for using Typescript in Max with npm dependencies.
+This project demonstrates how to use TypeScript in Max with npm dependencies.
+
+## Table of Contents
+
+- [Why TypeScript](#why-typescript)
+- [Dependencies](#dependencies)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Installing Dependencies Available to Max](#installing-dependencies-available-to-max)
+
+## Why TypeScript
+
+Max uses the [js object](https://docs.cycling74.com/max8/refpages/js) to run JavaScript code. The js object runtime in Max is [ECMAScript 2009, also known as ES5](https://www.w3schools.com/js/js_es5.asp), which is outdated and supports a limited set of features. However, you can use TypeScript to write **modern JavaScript (with types!)** and transpile it to ES5 to run in Max.
+
+This repository is set up to use [this tool](https://github.com/aptrn/maxmsp-ts) to transpile your TypeScript code to ES5 for use in Max. A key feature of this setup is that it allows you to use npm libraries in your Max+TypeScript project.
+
+## Dependencies
+
+[npm](https://npmjs.com) is the Node.js package manager and a public registry full of open-source JavaScript code for use in your projects. However, not all code on npm is compatible with ES5 and therefore not always usable in Max. You need to check Max compatibility yourself or, if you're writing your own library, you can use [this template](https://github.com/aptrn/maxmsp-ts-library-template) to get started.
+
+If you're sure a library is compatible with Max, you can [add it to the config file](#installing-dependencies-available-to-max), and it will be included in the compiled output.
 
 ## Prerequisites
 
 - [git](https://git-scm.com/downloads)
-
 - [Max](https://cycling74.com/downloads)
-
 - [Node.js](https://nodejs.org/en/download/)
-
-  - You can use [nvm for Windos](https://github.com/coreybutler/nvm-windows) or [nvm for Linux or Mac](https://github.com/nvm-sh/nvm)
-
+  - You can use [nvm for Windows](https://github.com/coreybutler/nvm-windows) or [nvm for Linux or Mac](https://github.com/nvm-sh/nvm)
 - [pnpm](https://pnpm.io/installation) (optional)
+  - Run `npm install -g pnpm`
 
-  - run `npm install -g pnpm`
+## Getting Started
 
-## Getting started
+1. Click the `Use this template` button on the top right of this page
+2. Clone your new repository:
+   ```
+   git clone https://github.com/your-username/your-repo.git
+   ```
+3. Install dependencies:
+   ```
+   pnpm install
+   ```
+4. Compile the code:
+   - Run `pnpm build` for a one-time build
+   - Or `pnpm dev` to build with live reloading
+5. Open the Max project file: `maxmsp-ts-example.maxproj`
 
-1. Clone this repo
-   - `git clone https://github.com/aptrn/maxmsp-ts-example.git`
-2. Install dependencies
+## Installing Dependencies Available to Max
 
-   - `pnpm install`
+You can install dependencies using `pnpm i -D <package-name>`. If you're sure the dependency is [**compatible with Max**](#dependencies), you can add it to the config file.
 
-3. Compile the code
+The configuration file `maxmsp.config.json` determines which dependencies are included in the compiled output. The default `output_path` is `lib`, placed as a subdirectory of the `outDir` found in the `tsconfig.json` file.
 
-   - Run `pnpm build` or `pnpm dev` to build with live reloading
+You can manually edit the `maxmsp.config.json` file or use command-line scripts:
 
-4. Open the the Max project
-   - file `maxmsp-ts-example.maxproj`
+```
+pnpm maxmsp add <package-name> [--alias] [--path] [--files]
+```
 
-## Install dependencies available to Max
+- `--alias`: Optional. Sets the prefix for the copied files. Default is the package name.
+- `--path`: Optional. Sets the path to the package. Default is the package name.
+- `--files`: Optional. Sets the files to copy. Default is `index.js`.
 
-You can install dependencies to javascript using `pnpm i -D <package-name>`.
+Example:
 
-If you're sure the dependency is **compatible with Max**, you can include it in the compiled output javascript.
+```
+pnpm maxmsp add @not251/not251 --alias not251 --files "index.js, index.map.js"
+```
 
-The configuration file `maxmsp.config.json` is used to determine which dependencies are included in the compiled output.
+This will copy files:
 
-The default `output_path` is `lib`, placed as a subdirectory of the `outDir` found in the `tsconfig.json` file.
+- `node_modules/@not251/not251/dist/index.js`
+- `node_modules/@not251/not251/dist/index.map.js`
 
-You can also manually edit the `maxmsp.config.json` file or use command line scripts.
+To:
 
-To add a new dependency to Max config file run `pnpm maxmsp add <package-name> --alias  --path --files `
-
-The `--alias` flag is optional, sets the prefix for the copied files. The default is the name of the package.
-
-The `--path` flag is optional, sets the path to the package. The default is the name of the package.
-
-The `--files` flag is optional, sets the files to copy. The default is `index.js`.
-
-    For example running
-        - `pnpm maxmsp add @not251/not251 --alias not251 --files "index.js, index.map.js"`
-
-    will copy files:
-        - `node_modules/@not251/not251/dist/index.js`
-        - `node_modules/@not251/not251/dist/index.map.js`
-    to:
-        - `lib/not251/not251_index.js`
-        - `lib/not251/not251_index.map.js`
+- `lib/not251/not251_index.js`
+- `lib/not251/not251_index.map.js`
