@@ -78,3 +78,7 @@ To:
 
 - `lib/not251/not251_index.js`
 - `lib/not251/not251_index.map.js`
+
+---
+
+This project is heavily inspired by [TypeScript-for-Max](https://github.com/ErnstHot/TypeScript-for-Max) and uses [Max/Msp types at DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/maxmsp)
