@@ -47,7 +47,7 @@ If you're sure a library is compatible with Max, you can [add it to the config f
    - Or `pnpm dev` to build with live reloading
 5. Open the Max project file: `maxmsp-ts-example.maxproj`
 
-## Installing Dependencies Available to Max
+## Bundle dependencies for Max
 
 You can install dependencies using `pnpm i -D <package-name>`. If you're sure the dependency is [**compatible with Max**](#dependencies), you can add it to the config file.
 
