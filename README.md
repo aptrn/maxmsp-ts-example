@@ -2,6 +2,8 @@
 
 This project demonstrates how to use TypeScript in Max with npm dependencies.
 
+This project is a work in progress, expect big changes. :)
+
 ## Table of Contents
 
 - [Why TypeScript](#why-typescript)
